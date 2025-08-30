@@ -32,7 +32,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "NICKNAME=${{ secrets['NICKNAME_' + matrix.user] }}" >> $GITHUB_ENV
+          echo "NICKNAME=${{ secrets[format('NICKNAME_{0}', matrix.user)] }}" >> $GITHUB_ENV
           echo "MSG=${{ secrets['MSG'] }}" >> $GITHUB_ENV
           echo "PROXY=${{ secrets.PROXY }}" >> $GITHUB_ENV
 
